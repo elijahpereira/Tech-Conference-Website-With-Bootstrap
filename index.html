@@ -28,13 +28,13 @@
         </div>
       </nav><!-- /navbar -->
       <!-- jumbotron -->
-      <div class="jumbotron jumbotron-fluid bg-info text-white">
+      <div id="home" class="jumbotron jumbotron-fluid bg-info text-white">
         <div class="container text-sm-center pt-5">
           <h1 class="display-2">Fullstack Conf</h1>
           <p class="lead">A One-day Conference ABout All Things JavaScript.</p>
 
           <div class="btn-group mt-4" role="group" aria-label="Callout buttons">
-            <button type="button" class="btn btn-primary btn-lg">Register Now</button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#register">Register Now</button>
             <a class="btn btn-light btn-lg" href="#speakers">See Speakers</a>
           </div>
         </div>
@@ -43,7 +43,7 @@
       <!--about-->
       <div class="row">
         <div class="col-lg lg-2 order-lg-2">
-          <h3 class="mb-4" href="#about">About Full Stack Conf</h3>
+          <h3 class="mb-4" id="about">About Full Stack Conf</h3>
           <img class="mb-4 img-fluid rounded d-none d-sm-block" src="img/pdx.jpg" alt="Portland">
           <p>The beautiful city of Portland, Oregon will be the host city for Full Stack Conf!</p>
           <p>Explore the future of JavaScript with a lineup of industry professionals. Discover new techniques to advance your career as a web developer.</p>
@@ -56,14 +56,14 @@
         </div>
         <div class="col-lg order-lg-3">
           <h3 class="mb-4">What You'll Learn</h3>
-          <ul>
-            <li><strong>MongoDB</strong>: NoSQL database</li>
-            <li><strong>Express</strong>: Framework for Node</li>
-            <li><strong>React</strong>: JavaScript library</li>
-            <li><strong>Node.js</strong>: JavaScript environment</li>
-            <li><strong>ES2015</strong>: Latest version of JavaScript</li>
-            <li><strong>Babel</strong>: JavaScript compiler</li>
-          </ul>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong>MongoDB</strong>: NoSQL database</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>Express</strong>: Framework for Node</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>React</strong>: JavaScript library</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>Node.js</strong>: JavaScript environment</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>ES2015</strong>: Latest version of JavaScript</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>Babel</strong>: JavaScript compiler</a>
+          </div>
         </div>
       </div>
       <!--/about-->
@@ -135,11 +135,60 @@
         </div>
       </div><!-- /speakers -->
       <!--schedule-->
-      <h1 class="display-4 text-center my-5 text-muted" href="#schedule">Schedule</h1>
-      [Conference schedule goes here]
-      <!-- /schedule-->
+      <h1 class="display-4 text-center my-5 text-muted" id="schedule">Schedule</h1>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">Keynote: Internet of Things</h5>
+            <span class="badge badge-pill badge-info p-2">9:00am</span>
+          </div>
+          <p class="mb-1">NodeStradamus</p>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">React Basics</h5>
+            <span class="badge badge-pill badge-info p-2">10:00am</span>
+          </div>
+          <p class="mb-1">Vivianne McVue</p>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">Hey, Mongo!</h5>
+            <span class="badge badge-pill badge-info p-2">11:00am</span>
+          </div>
+          <p class="mb-1">Jay Query</p>
+        </li>
+        <li class="list-group-item list-group-item-success">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">Lunch</h5>
+            <span class="badge badge-pill badge-info p-2">12:00pm</span>
+          </div>
+          <p class="mb-1">Free pizza for everyone!</p>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">Introducing ES2015</h5>
+            <span class="badge badge-pill badge-info p-2">1:00pm</span>
+          </div>
+          <p class="mb-1">Ecma Scriptnstuff</p>
+        </li> 
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">Getting Started With Redux</h5>
+            <span class="badge badge-pill badge-info p-2">2:00pm</span>
+          </div>
+          <p class="mb-1">Robbie Redux</p>
+        </li> 
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">What's Babel?</h5>
+            <span class="badge badge-pill badge-info p-2">3:00pm</span>
+          </div>
+          <p class="mb-1">Json Babel</p>
+        </li>        
+      </ul><!-- /schedule -->
       <!-- callout button-->
-      <button type="buitton" class="btn btn-outline-info btn-lg d-block mx-auto my-5">Don't Miss Out Register Now </button>
+      <button type="buitton" class="btn btn-outline-info btn-lg d-block mx-auto my-5" data-toggle="modal" data-target="#register">Don't Miss Out Register Now </button>
 
       <!-- /callout button-->
       <!-- signup form -->
@@ -192,6 +241,28 @@
       </div><!-- /footer -->
     </div> <!--.container-->
 
+    <!--=====================================
+     FORM MODAL
+    =====================================-->
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="register  form" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Register for Full Stack Conf</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Form goes here...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
